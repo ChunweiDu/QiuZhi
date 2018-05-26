@@ -65,7 +65,7 @@ class PictureLoader {
                     InputStream is = conn.getInputStream();
                     ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
                     byte[] bytes = new byte[1024];
-                    int length = 0;
+                    int length ;
                     while ((length = is.read(bytes)) != -1) {
                         outputStream.write(bytes, 0, length);
                     }
@@ -73,6 +73,7 @@ class PictureLoader {
                     is.close();
                     outputStream.close();
                     mHandler.sendEmptyMessage(0x123);
+
                 }
             } catch (Exception e) {
                 e.printStackTrace();
